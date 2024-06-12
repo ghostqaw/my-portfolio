@@ -11,6 +11,27 @@ header {
     color: white;
     padding: 4em 0;
     text-align: center;
+    position: relative;
+}
+
+.language-selector {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.language-selector button {
+    background: none;
+    border: 1px solid #00FF6C;
+    color: #00FF6C;
+    padding: 0.5em 1em;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.language-selector button:hover {
+    background: #00FF6C;
+    color: white;
 }
 
 header .highlight {
@@ -90,7 +111,5 @@ footer {
     color: white;
     text-align: center;
     padding: 1em 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
 }
+
