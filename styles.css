@@ -64,9 +64,9 @@ section {
 
 #about img, #education img {
     border-radius: 10px;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
 }
 
 #education .content {
