@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 4em 0;
+    text-align: center;
+}
+
+header .highlight {
+    color: #00FF6C;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.btn {
+    display: inline-block;
+    color: white;
+    background: #00FF6C;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section {
+    padding: 4em 0;
+}
+
+#about .content {
+    display: flex;
+    align-items: center;
+}
+
+#about img {
+    border-radius: 50%;
+    margin-right: 2em;
+    max-width: 200px;
+}
+
+.projects {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: white;
+    padding: 1em;
+    margin: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.333% - 2em);
+    box-sizing: border-box;
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 1em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background: #00FF6C;
+    color: white;
+    padding: 1em;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
