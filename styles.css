@@ -63,9 +63,10 @@ section {
 }
 
 #about img, #education img {
-    border-radius: 50%;
-    margin-right: 3em;
-    max-width: 300px;
+    border-radius: 10px;
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
 }
 
 #education .content {
