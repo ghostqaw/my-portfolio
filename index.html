@@ -9,20 +9,27 @@
 <body>
     <header>
         <div class="container">
-            <h1>Hello, I'm <span class="highlight">Yesbol Zholdasbay</span></h1>
-            <p>Front-end Developer</p>
-            <a href="#contact" class="btn">Let's Talk</a>
+            <div class="language-selector">
+                <button onclick="setLanguage('en')">EN</button>
+                <button onclick="setLanguage('ru')">RU</button>
+            </div>
+            <h1 data-en="Hello, I'm" data-ru="Привет, я">Hello, I'm</h1>
+            <p data-en="Yesbol Zholdasbay" data-ru="Есбол Жолдасбай">Yesbol Zholdasbay</p>
+            <p data-en="Full-Stack Developer" data-ru="Фулл-стэк разработчик">Full-Stack Developer</p>
+            <a href="#contact" class="btn" data-en="Let's Talk" data-ru="Давайте поговорим">Let's Talk</a>
         </div>
     </header>
 
     <section id="about">
         <div class="container">
-            <h2>About Me</h2>
+            <h2 data-en="About Me" data-ru="Обо мне">About Me</h2>
             <div class="content">
                 <img src="your-photo.jpg" alt="Yesbol Zholdasbay">
                 <div class="text">
-                    <p>Привет! Меня зовут Yesbol Zholdasbay, мне 23 года. Я выпускник 2024 года Алматинского Университета Энергетики и Связи имени Гумарбека Даукеева. Я разработчик с опытом работы в Python, Django, Flask и других технологиях. Я стремлюсь к постоянному обучению и развитию в области программирования и IT.</p>
-                    <a href="#contact" class="btn">Contact Me</a>
+                    <p data-en="Hi! My name is Yesbol Zholdasbay, I am 23 years old. I am a 2024 graduate of the Almaty University of Energy and Communications named after Gumarbek Daukeyev. I am a full-stack developer with experience in Python, Django, Flask, and other technologies. I strive for continuous learning and development in the field of programming and IT." data-ru="Привет! Меня зовут Yesbol Zholdasbay, мне 23 года. Я выпускник 2024 года Алматинского Университета Энергетики и Связи имени Гумарбека Даукеева. Я фулл-стэк разработчик с опытом работы в Python, Django, Flask и других технологиях. Я стремлюсь к постоянному обучению и развитию в области программирования и IT.">
+                        Hi! My name is Yesbol Zholdasbay, I am 23 years old.
+                    </p>
+                    <a href="#contact" class="btn" data-en="Contact Me" data-ru="Свяжитесь со мной">Contact Me</a>
                 </div>
             </div>
         </div>
@@ -30,19 +37,19 @@
 
     <section id="portfolio">
         <div class="container">
-            <h2>Recent Projects</h2>
+            <h2 data-en="Recent Projects" data-ru="Недавние проекты">Recent Projects</h2>
             <div class="projects">
                 <div class="project">
                     <img src="project1.jpg" alt="Project 1">
-                    <p>Проект 1 - Описание проекта 1</p>
+                    <p data-en="Project 1 - Description of project 1" data-ru="Проект 1 - Описание проекта 1">Project 1 - Description of project 1</p>
                 </div>
                 <div class="project">
                     <img src="project2.jpg" alt="Project 2">
-                    <p>Проект 2 - Описание проекта 2</p>
+                    <p data-en="Project 2 - Description of project 2" data-ru="Проект 2 - Описание проекта 2">Project 2 - Description of project 2</p>
                 </div>
                 <div class="project">
                     <img src="project3.jpg" alt="Project 3">
-                    <p>Проект 3 - Описание проекта 3</p>
+                    <p data-en="Project 3 - Description of project 3" data-ru="Проект 3 - Описание проекта 3">Project 3 - Description of project 3</p>
                 </div>
             </div>
         </div>
@@ -50,12 +57,12 @@
 
     <section id="contact">
         <div class="container">
-            <h2>Contact Me</h2>
+            <h2 data-en="Contact Me" data-ru="Свяжитесь со мной">Contact Me</h2>
             <form action="https://formspree.io/f/your-form-id" method="POST">
-                <input type="text" name="name" placeholder="Enter your name" required>
-                <input type="email" name="_replyto" placeholder="Enter your email" required>
-                <textarea name="message" placeholder="Enter your message" required></textarea>
-                <button type="submit" class="btn">Send Message</button>
+                <input type="text" name="name" placeholder="Enter your name" data-en="Enter your name" data-ru="Введите ваше имя" required>
+                <input type="email" name="_replyto" placeholder="Enter your email" data-en="Enter your email" data-ru="Введите ваш email" required>
+                <textarea name="message" placeholder="Enter your message" data-en="Enter your message" data-ru="Введите ваше сообщение" required></textarea>
+                <button type="submit" class="btn" data-en="Send Message" data-ru="Отправить сообщение">Send Message</button>
             </form>
         </div>
     </section>
@@ -65,8 +72,15 @@
             <p>&copy; 2024 Yesbol Zholdasbay</p>
         </div>
     </footer>
+
+    <script>
+        function setLanguage(lang) {
+            document.querySelectorAll('[data-en]').forEach(element => {
+                element.innerText = element.getAttribute(`data-${lang}`);
+            });
+        }
+    </script>
 </body>
 </html>
 
-</html>
 
