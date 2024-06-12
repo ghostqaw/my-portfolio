@@ -64,8 +64,8 @@ section {
 
 #about img, #education img {
     border-radius: 50%;
-    margin-right: 2em;
-    max-width: 200px;
+    margin-right: 3em;
+    max-width: 300px;
 }
 
 #education .content {
