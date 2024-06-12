@@ -95,7 +95,7 @@ section {
 }
 
 form input, form textarea {
-    width: 99.9%;
+    width: 99%;
     padding: 1em;
     margin-bottom: 1em;
     border: 1px solid #ccc;
