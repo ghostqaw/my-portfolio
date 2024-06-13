@@ -14,7 +14,7 @@ header {
     position: relative;
 }
 .projects:hover {
-    font-size: 2em;
+    font-size: 1em;
     cursor: pointer;
 }
 .language-selector {
