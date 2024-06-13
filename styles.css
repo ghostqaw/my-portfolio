@@ -13,8 +13,8 @@ header {
     text-align: center;
     position: relative;
 }
-.projects:hover {
-    font-size: 1em;
+.project:hover {
+    font-size: 2em;
     cursor: pointer;
 }
 .language-selector {
