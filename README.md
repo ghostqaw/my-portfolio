@@ -1,4 +1,10 @@
 
 
-https://github.com/ghostqaw/my-portfolio/assets/95573117/0abd2bfb-bb50-4efa-b607-5a468212db55
+
+
+
+
+
+
+Uploading zanalyqtar-google-chrome-2024-06-24-17-12-52-gkjvxft2_IITzrKAA.mp4…
 
