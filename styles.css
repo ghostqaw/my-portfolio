@@ -194,6 +194,10 @@ footer {
     margin: 0;
 }
 
+.skill-item:hover {
+    transform: scale(1.15);
+}
+
 @keyframes scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(calc(-100px * 7)); }
@@ -201,7 +205,7 @@ footer {
 
 .skills-carousel {
     display: flex;
-
+    justify-content: space-around;
     animation: scroll 35s linear infinite;
 }
 
