@@ -64,17 +64,14 @@
             <h2 data-en="Recent Projects" data-ru="Недавние проекты">Recent Projects</h2>
             <div class="projects">
                  <div class="project" onclick="openModal('project1')">
-                    <img src="image.png" alt="Project 1">
-                    <p data-en="Project 1 - Description of project 1" data-ru="Проект 1 - Описание проекта 1">Project 1 - Description of project 1</p>
+                    <img src="555.png" alt="Project 1">
+                    <p data-en="Medical portal" style="text-align: center" data-ru="Медицинский портал">Medical portal</p>
                 </div>
                 <div class="project" onclick="openModal('project2')">
                     <img src="image2.png" alt="Project 2">
-                    <p data-en="Project 2 - Description of project 2" data-ru="Проект 2 - Описание проекта 2">Project 2 - Description of project 2</p>
+                    <p style="text-align: center" data-en="News site" data-ru="Новостной сайт">News site</p>
                 </div>
-                <div class="project" onclick="openModal('project3')">
-                    <img src="image2.png" alt="Project 3">
-                    <p data-en="Project 3 - Description of project 3" data-ru="Проект 3 - Описание проекта 3">Project 3 - Description of project 3</p>
-                </div>
+
             </div>
         </div>
     </section>
@@ -102,30 +99,41 @@
         </div>
     </footer>
 
-    <script>
+
+<script>
+        let currentLang = 'en';
+
         function setLanguage(lang) {
+            currentLang = lang;
             document.querySelectorAll('[data-en]').forEach(element => {
                 element.innerText = element.getAttribute(`data-${lang}`);
             });
         }
-       function openModal(project) {
+
+        function openModal(project) {
             const modal = document.getElementById('projectModal');
             const modalContent = document.getElementById('modalContent');
             let content = '';
 
             switch(project) {
                 case 'project1':
-                    content = '<h2>Project 1</h2><p>Detailed description of Project 1.</p>';
+                     content = `<h2 style="text-align: center" data-en="AUYRMA" data-ru="AUYRMA">AUYRMA</h2>
+                               <p style="margin: 20px;" data-en="AUYRMA is a medical portal designed to provide patients with an easy way to manage their appointments, medical records, and doctor consultations. The system ensures that only patients can register, and doctors are added through an admin panel. It includes features like appointment scheduling, prescription management, and integration with electronic health records." data-ru="AUYRMA - это медицинский портал, предназначенный для предоставления пациентам удобного способа управления своими записями на прием, медицинскими записями и консультациями с врачами. Система обеспечивает возможность регистрации только для пациентов, а врачи добавляются через админ-панель. Включает функции планирования приема, управления рецептами и интеграции с электронными медицинскими записями.">AUYRMA is a medical portal designed to provide patients with an easy way to manage their appointments, medical records, and doctor consultations. The system ensures that only patients can register, and doctors are added through an admin panel. It includes features like appointment scheduling, prescription management, and integration with electronic health records.</p>
+                               <h3 style="text-align: center; cursor: pointer;"><a class="btn" data-en="Go to project source code" data-ru="Перейти к исходному коду проекта" style="color: white; text-align: center;" href="https://github.com/ghostqaw/clinicl"></a></h3>
+                               <video autoplay controls loop width="98%"><source src="Screencast.mp4"></video>`;
                     break;
                 case 'project2':
-                    content = '<h2>Project 2</h2><p>Detailed description of Project 2.</p><video autoplay width="98%"><source src="zanalyqtar-google-chrome-2024-06-24-17-12-52_RR99TyW2.mp4"></video>';
+                    content = `<h2 style="text-align: center" data-en="News site" data-ru="Сайт новостей">News site</h2>
+                               <p style="margin: 20px;" data-en="This website is designed for creating, adding, editing, and managing news articles in the Kazakh state language. Users can enter the news title, description, image, publication date, and actions. When adding or editing news, users can easily build a news database by filling in the necessary information. The main goal of this news website is to provide users with the ability to manage news effectively and help them publish news quickly and easily through a user-friendly interface." data-ru="Этот сайт предназначен для создания, добавления, редактирования и управления новостями на государственном казахском языке. Пользователи могут вводить заголовок новостей, описание, изображение, дату публикации и действия. При добавлении или редактировании новостей пользователи могут легко создавать базу новостей, заполняя необходимые сведения. Основная цель этого новостного сайта — предоставить пользователям возможность эффективно управлять новостями и помочь им быстро и легко публиковать новости с помощью удобного интерфейса.">This website is designed for creating, adding, editing, and managing news articles in the Kazakh state language. Users can enter the news title, description, image, publication date, and actions. When adding or editing news, users can easily build a news database by filling in the necessary information. The main goal of this news website is to provide users with the ability to manage news effectively and help them publish news quickly and easily through a user-friendly interface.</p>
+                               <h3 style="text-align: center; cursor: pointer;"><a class="btn" data-en="Go to project source code" data-ru="Перейти к исходному коду проекта" style="color: white; text-align: center;" href="https://github.com/ghostqaw/news-app"></a></h3>
+                               <video  autoplay controls loop width="98%"><source src="zanalyqtar-google-chrome-2024-06-24-17-12-52_RR99TyW2.mp4"></video>`;
                     break;
-                case 'project3':
-                    content = '<h2>Project 3</h2><p>Detailed description of Project 3.</p>';
-                    break;
+                default:
+                    content = `<h2>Unknown Project</h2>`;
             }
 
             modalContent.innerHTML = content;
+            setLanguage(currentLang);
             modal.style.display = 'block';
         }
 
