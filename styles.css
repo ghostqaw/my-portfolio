@@ -71,6 +71,11 @@ section {
     max-width: 300px;
 }
 
+#education img {
+    border-radius: 50%;
+    margin-right: 3em;
+    max-width: 400px;
+}
 #education .content {
     display: flex;
     align-items: center;
@@ -155,4 +160,52 @@ footer {
 }
 
 
+#skills {
+    padding: 4em 0;
+    background-color: #f9f9f9;
+}
+
+.skills-carousel {
+    display: flex;
+    overflow: hidden;
+    padding: 1em 0;
+    position: relative;
+}
+
+.skill-item {
+    flex: 0 0 auto;
+    background: #333;
+    color: white;
+    padding: 1em;
+    margin: 0 1em;
+    border-radius: 5px;
+    text-align: center;
+    white-space: nowrap;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill-item img {
+    max-width: 200px;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+.skill-item p {
+    text-align: center;
+    margin: 0;
+}
+
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100px * 7)); }
+}
+
+.skills-carousel {
+    display: flex;
+
+    animation: scroll 35s linear infinite;
+}
+
+.skills-carousel:hover {
+    animation-play-state: paused;
+}
 

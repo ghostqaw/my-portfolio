@@ -57,6 +57,45 @@
         </div>
     </div>
 </section>
+<section id="skills">
+    <div class="container">
+        <h2 data-en="Skills" data-ru="Навыки">Skills</h2>
+        <div class="skills-carousel">
+            <div class="skill-item">
+                <img src="https://www.cnet.com/a/img/resize/e8cc33620ed55e5d8952e560806f8924dc6f04a5/hub/2020/07/02/b678e7af-29e6-41d4-8c59-720322973a32/python-skillshare-1.jpg?auto=webp&fit=crop&height=675&width=1200" alt="Python">
+                <p>Python</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://media.licdn.com/dms/image/D4D12AQEv1rKjMQjFug/article-cover_image-shrink_600_2000/0/1694101907119?e=2147483647&v=beta&t=1G3jpQfDUULdvkF_DMUyBBrDlw-pkqSEghOsH4d-xlY" alt="Django">
+                <p>Django</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://img-c.udemycdn.com/course/750x422/4920972_73b2_3.jpg" alt="Postgresql">
+                <p>Postgresql</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://www.hrishionlinebuddhi.com/s/store/courses/64180bbee4b093a578d69dd5/cover.jpg?v=3" alt="JavaScript">
+                <p>JavaScript/Jquery</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://miro.medium.com/v2/resize:fit:960/1*OlyP02fRFe8pEkJgb6vGTQ.png" alt="HTML/CSS">
+                <p>HTML/CSS</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://belenos.me/media/2020-01-docker.webp" alt="Docker">
+                <p>Docker</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://nielit.gov.in/sites/default/files/Aurangabad/CompTIA-Certification-Exam-.jpg" alt="Kubernetes">
+                <p>Linux/Bash</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://media.licdn.com/dms/image/C4D12AQFee2MH9r5SLg/article-inline_image-shrink_1000_1488/0/1648470729149?e=1724889600&v=beta&t=AS_F0q9_QmaQiAj0ufc3z1B5l6ovnRrbrPZkY9Elmik" alt="Terraform">
+                <p>Git/GitHub/GitLab</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
     <section id="portfolio">
@@ -147,6 +186,24 @@
                 modal.style.display = 'none';
             }
         }
+document.addEventListener('DOMContentLoaded', function() {
+    const skillsCarousel = document.querySelector('.skills-carousel');
+    const skillWidth = skillsCarousel.firstElementChild.getBoundingClientRect().width;
+    const numberOfSkills = skillsCarousel.children.length;
+
+    skillsCarousel.style.width = `${skillWidth * numberOfSkills}px`;
+
+    setInterval(() => {
+        skillsCarousel.style.transition = 'transform 0.3s ease-in-out';
+        skillsCarousel.style.transform = `translateX(-${skillWidth}px)`;
+        setTimeout(() => {
+            skillsCarousel.appendChild(skillsCarousel.firstElementChild);
+            skillsCarousel.style.transition = 'none';
+            skillsCarousel.style.transform = 'translateX(0)';
+        }, 300);
+    }, 3000);
+});
+
     </script>
 </body>
 </html>
