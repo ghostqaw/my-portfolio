@@ -217,7 +217,6 @@ footer {
 @media (max-width: 768px) {
     #about .content, #education .content {
         flex-direction: column;
-        text-align: center;
     }
 
 #about img {
