@@ -217,3 +217,64 @@ footer {
     animation-play-state: paused;
 }
 
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+    }
+
+    header {
+        padding: 50px 0;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .skills-carousel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-item {
+        flex: 0 0 auto;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1em;
+    }
+
+    .language-selector {
+        top: 10px;
+        right: 10px;
+    }
+
+    .language-selector button {
+        padding: 5px;
+        margin: 2px;
+    }
+}
+
+/* Дополнительные стили для маленьких экранов */
+@media (max-width: 480px) {
+    header {
+        padding: 30px 0;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    .skill-item {
+        width: 100%;
+    }
+}
