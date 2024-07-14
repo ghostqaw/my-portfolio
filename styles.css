@@ -214,3 +214,21 @@ footer {
     animation-play-state: paused;
 }
 
+@media (max-width: 768px) {
+    #about .content, #education .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #about .text, #education .text {
+        max-width: 100%;
+    }
+
+    .skills-carousel {
+        flex-direction: column;
+    }
+
+    .skill-item {
+        margin: 5px 0;
+    }
+}
