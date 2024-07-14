@@ -215,7 +215,7 @@ footer {
 }
 
 @media (max-width: 768px) {
-    #about .content, #education .content {
+    #about , #education {
         flex-direction: column;
     }
 
