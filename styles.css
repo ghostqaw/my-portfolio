@@ -220,6 +220,18 @@ footer {
         text-align: center;
     }
 
+#about img {
+    border-radius: 50%;
+    margin-right: 3em;
+    max-width: 230px;
+}
+
+#education img {
+    border-radius: 50%;
+    margin-right: 3em;
+    max-width: 250px;
+
+}
     #about .text, #education .text {
         max-width: 100%;
     }
