@@ -235,11 +235,5 @@ footer {
         max-width: 100%;
     }
 
-    .skills-carousel {
-        flex-direction: column;
-    }
 
-    .skill-item {
-        margin: 5px 0;
-    }
 }
