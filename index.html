@@ -37,6 +37,49 @@
             </div>
         </div>
     </section>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<section id="links" class="closed">
+    <div class="fire-arrow-container" onclick="toggleLinks()">
+        <div class="fire-arrow"></div>
+        <div class="fire-arrow"></div>
+        <div class="fire-arrow"></div>
+    </div>
+    <div class="container">
+        <h2 data-en="Useful Links" data-ru="Полезные ссылки">Useful Links</h2>
+        <div class="links-content">
+            <ul>
+                <li>
+                    <a href="https://github.com/ghostqaw" target="_blank">
+                        <i class="fab fa-github fa-2x"></i>
+                        <p>GitHub</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/esbol-zholdasbai-008abb221/" target="_blank">
+                        <i class="fab fa-linkedin fa-2x"></i>
+                        <p>LinkedIn</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://t.me/Xodnd99" target="_blank">
+                        <i class="fab fa-telegram fa-2x"></i>
+                        <p>Telegram</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://instagram.com" target="_blank">
+                        <i class="fab fa-instagram fa-2x"></i>
+                        <p>Instagram</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
 
     <section id="education">
     <div class="container">
@@ -100,6 +143,10 @@
             <div class="skill-item">
                 <img src="https://www.keycdn.com/img/blog/chrome-devtools.png" alt="Terraform">
                 <p>Chrome DevTools</p>
+            </div>
+            <div class="skill-item">
+                <img src="https://www.patterns.dev/img/reactjs/react-logo@3x.svg" alt="Terraform">
+                <p>React JS</p>
             </div>
         </div>
     </div>
@@ -206,7 +253,7 @@
 
     // Сразу начинаем карусель с первого элемента (позиция 0)
     let currentIndex = 0;
-    
+
     setInterval(() => {
         // Плавно двигаем карусель к следующему элементу
         currentIndex = (currentIndex + 1) % numberOfSkills;
@@ -226,7 +273,10 @@
     }, 3000);
 });
 
-
+ function toggleLinks() {
+        const linksSection = document.getElementById('links');
+        linksSection.classList.toggle('open');
+    }
     </script>
 </body>
 </html>

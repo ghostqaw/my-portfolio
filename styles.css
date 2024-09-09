@@ -63,6 +63,23 @@ section {
 #about .content {
     display: flex;
     align-items: center;
+
+}
+#about, #links, #education {
+    margin-bottom: 0; /* Убираем нижние отступы */
+    padding-bottom: 0; /* Убираем дополнительные внутренние отступы */
+}
+#education {
+    margin-top: -30px;
+}
+/* Настройка отступов для контейнеров внутри секций */
+.container {
+    margin-bottom: 0; /* Убираем нижние отступы у контейнера */
+}
+
+/* Дополнительно для уменьшения верхнего отступа у секции Links */
+#links {
+    margin-top: -50px; /* Сдвигаем секцию вверх для уменьшения расстояния */
 }
 
 #about img {
@@ -287,4 +304,168 @@ footer {
 .skills-carousel:hover {
     animation-play-state: paused;
 }
+}
+
+#links {
+    background-color: #333; /* Темный фон */
+    color: white;
+    padding: 2em 0;
+    position: relative;
+    width: 45%; /* Чуть короче середины экрана */
+    margin-left: auto; /* Выровнять секцию по правому краю */
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+}
+
+#links .links-content {
+    display: flex;
+        justify-content: center;
+}
+
+#links h2 {
+    text-align: right; /* Выровнять заголовок по правому краю */
+    margin-right: 1em;
+}
+
+#links ul {
+    display: flex;
+        justify-content: space-between; /* Распределение элементов */
+        width: 100%; /* Ширина списка ссылок */
+        max-width: 500px; /* Ограничиваем максимальную ширину */
+        padding: 0;
+}
+
+#links li {
+    margin-bottom: 1em;
+}
+
+#links a {
+    color: #00FF6C; /* Цвет ссылок */
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+#links a:hover {
+    text-decoration: underline;
+}
+/* Медиа-запрос для экранов шириной менее 768px */
+@media (max-width: 768px) {
+    /* Выровнять секции по центру */
+    #about, #education, #links {
+        padding: 2em 0;
+        text-align: center; /* Центрирование текста */
+    }
+    #links {
+        right: -95%; /* Скроем почти всю панель, оставив видимым 5% */
+        width: 95%;  /* Ширина панели на мобильных устройствах */
+    }
+    #links.open {
+        right: 0;
+    }
+    #about .content, #education .content {
+        flex-direction: column; /* Выравниваем контент по вертикали */
+    }
+
+
+    #links ul {
+        flex-direction: column; /* На мобильных ссылки будут вертикальными */
+        padding: 0;
+        margin: 0;
+    }
+
+    #links li {
+        margin-bottom: 1em;
+    }
+}
+
+
+
+#links {
+    background-color: #333;
+    color: white;
+    width: 45%;
+    padding: 2em 0;
+    position: fixed;
+    right: -44%; /* Панель почти скрыта, виден 1 см */
+    top: 20%;
+    transition: right 0.5s ease;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
+    z-index: 10;
+}
+
+#links.open {
+    right: 0; /* Открываем панель */
+}
+
+.fire-arrow-container {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.fire-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgb(10, 248, 20) 20%, rgb(6, 173, 13) 80%);
+    box-shadow: 0 0 15px rgb(11, 82, 14), 0 0 30px rgb(4, 154, 10);
+    animation: fire-move 1s infinite alternate;
+    margin: 5px 0;
+}
+
+.fire-arrow:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.fire-arrow:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Анимация для стрелок-пламени */
+@keyframes fire-move {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(-10px); /* Движение стрелки влево */
+        opacity: 0.7;
+    }
+}
+
+/* Стили для списка полезных ссылок */
+#links .links-content {
+    display: flex;
+    justify-content: center;
+}
+
+#links ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    max-width: 500px;
+}
+
+#links li {
+    margin-bottom: 1em;
+}
+
+#links a {
+    color: #00FF6C;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+#links a:hover {
+    text-decoration: underline;
 }
