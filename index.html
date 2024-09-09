@@ -194,23 +194,38 @@
                 modal.style.display = 'none';
             }
         }
-document.addEventListener('DOMContentLoaded', function() {
+
+
+    document.addEventListener('DOMContentLoaded', function() {
     const skillsCarousel = document.querySelector('.skills-carousel');
     const skillWidth = skillsCarousel.firstElementChild.getBoundingClientRect().width;
     const numberOfSkills = skillsCarousel.children.length;
 
+    // Устанавливаем ширину карусели в зависимости от количества элементов
     skillsCarousel.style.width = `${skillWidth * numberOfSkills}px`;
 
+    // Сразу начинаем карусель с первого элемента (позиция 0)
+    let currentIndex = 0;
+    
     setInterval(() => {
+        // Плавно двигаем карусель к следующему элементу
+        currentIndex = (currentIndex + 1) % numberOfSkills;
         skillsCarousel.style.transition = 'transform 0.3s ease-in-out';
-        skillsCarousel.style.transform = `translateX(-${skillWidth}px)`;
+        skillsCarousel.style.transform = `translateX(-${currentIndex * skillWidth}px)`;
+
+        // Возвращаем первый элемент в конец для бесконечной карусели
         setTimeout(() => {
-            skillsCarousel.appendChild(skillsCarousel.firstElementChild);
-            skillsCarousel.style.transition = 'none';
-            skillsCarousel.style.transform = 'translateX(0)';
+            if (currentIndex === numberOfSkills - 1) {
+                // Перемещаем первый элемент в конец и сбрасываем смещение
+                skillsCarousel.appendChild(skillsCarousel.firstElementChild);
+                skillsCarousel.style.transition = 'none';
+                skillsCarousel.style.transform = 'translateX(0)';
+                currentIndex = 0;
+            }
         }, 300);
     }, 3000);
 });
+
 
     </script>
 </body>
