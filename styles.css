@@ -187,8 +187,12 @@ footer {
     display: flex;
     overflow: hidden;
     padding: 1em 0;
-    position: relative;
+    justify-content: flex-start;
+        transform: translateX(100%); /* Start from right */
+        transition: transform 0.5s ease-in-out; /* Smooth transition */
 }
+
+
 
 .skill-item {
     flex: 0 0 auto;
@@ -306,48 +310,7 @@ footer {
 }
 }
 
-#links {
-    background-color: #333; /* Темный фон */
-    color: white;
-    padding: 2em 0;
-    position: relative;
-    width: 45%; /* Чуть короче середины экрана */
-    margin-left: auto; /* Выровнять секцию по правому краю */
-    border-bottom-left-radius: 50px;
-    border-top-left-radius: 50px;
-}
 
-#links .links-content {
-    display: flex;
-        justify-content: center;
-}
-
-#links h2 {
-    text-align: right; /* Выровнять заголовок по правому краю */
-    margin-right: 1em;
-}
-
-#links ul {
-    display: flex;
-        justify-content: space-between; /* Распределение элементов */
-        width: 100%; /* Ширина списка ссылок */
-        max-width: 500px; /* Ограничиваем максимальную ширину */
-        padding: 0;
-}
-
-#links li {
-    margin-bottom: 1em;
-}
-
-#links a {
-    color: #00FF6C; /* Цвет ссылок */
-    text-decoration: none;
-    font-size: 1.2em;
-}
-
-#links a:hover {
-    text-decoration: underline;
-}
 /* Медиа-запрос для экранов шириной менее 768px */
 @media (max-width: 768px) {
     /* Выровнять секции по центру */
@@ -383,15 +346,19 @@ footer {
 #links {
     background-color: #333;
     color: white;
-    width: 45%;
+    width: 35%;
     padding: 2em 0;
     position: fixed;
-    right: -44%; /* Панель почти скрыта, виден 1 см */
+    right: -34%; /* Панель почти скрыта, виден 1 см */
     top: 20%;
     transition: right 0.5s ease;
     border-bottom-left-radius: 50px;
     border-top-left-radius: 50px;
     z-index: 10;
+    border-top: 2px solid #00FF6C;     /* Верхняя граница */
+    border-left: 2px solid #00FF6C;    /* Левая граница */
+    border-bottom: 2px solid #00FF6C;  /* Нижняя граница */
+    border-right: 2px solid transparent; /* Убираем правую границу */
 }
 
 #links.open {
@@ -468,4 +435,13 @@ footer {
 
 #links a:hover {
     text-decoration: underline;
+}
+.btn {
+    display: inline-block;
+    color: white;
+    background: #00FF6C;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 0 30px 0;
 }

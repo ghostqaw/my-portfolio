@@ -165,6 +165,10 @@
                     <img src="image2.png" alt="Project 2">
                     <p style="text-align: center" data-en="News site" data-ru="Новостной сайт">News site</p>
                 </div>
+                <div class="project" onclick="openModal('project3')">
+                    <img src="datatest-dot.bmp" alt="Project 3">
+                    <p style="text-align: center" data-en="Financial analytical bot" data-ru="Финансово аналитический бот">Financial analytical bot</p>
+                </div>
 
             </div>
         </div>
@@ -213,14 +217,20 @@
                 case 'project1':
                      content = `<h2 style="text-align: center" data-en="AUYRMA" data-ru="AUYRMA">AUYRMA</h2>
                                <p style="margin: 20px;" data-en="AUYRMA is a medical portal designed to provide patients with an easy way to manage their appointments, medical records, and doctor consultations. The system ensures that only patients can register, and doctors are added through an admin panel. It includes features like appointment scheduling, prescription management, and integration with electronic health records." data-ru="AUYRMA - это медицинский портал, предназначенный для предоставления пациентам удобного способа управления своими записями на прием, медицинскими записями и консультациями с врачами. Система обеспечивает возможность регистрации только для пациентов, а врачи добавляются через админ-панель. Включает функции планирования приема, управления рецептами и интеграции с электронными медицинскими записями.">AUYRMA is a medical portal designed to provide patients with an easy way to manage their appointments, medical records, and doctor consultations. The system ensures that only patients can register, and doctors are added through an admin panel. It includes features like appointment scheduling, prescription management, and integration with electronic health records.</p>
-                               <h3 style="text-align: center; cursor: pointer;"><a class="btn" data-en="Go to project source code" data-ru="Перейти к исходному коду проекта" style="color: white; text-align: center;" href="https://github.com/ghostqaw/clinicl"></a></h3>
+                               <h3 style="text-align: center; cursor: pointer;"><a class="btn" data-en="Go to project source code" data-ru="Перейти к исходному коду проекта" style="color: white; text-align: center;" target="_blank" href="https://github.com/ghostqaw/clinicl"></a></h3>
                                <video autoplay controls loop width="98%"><source src="Screencast.mp4"></video>`;
                     break;
                 case 'project2':
                     content = `<h2 style="text-align: center" data-en="News site" data-ru="Сайт новостей">News site</h2>
                                <p style="margin: 20px;" data-en="This website is designed for creating, adding, editing, and managing news articles in the Kazakh state language. Users can enter the news title, description, image, publication date, and actions. When adding or editing news, users can easily build a news database by filling in the necessary information. The main goal of this news website is to provide users with the ability to manage news effectively and help them publish news quickly and easily through a user-friendly interface." data-ru="Этот сайт предназначен для создания, добавления, редактирования и управления новостями на государственном казахском языке. Пользователи могут вводить заголовок новостей, описание, изображение, дату публикации и действия. При добавлении или редактировании новостей пользователи могут легко создавать базу новостей, заполняя необходимые сведения. Основная цель этого новостного сайта — предоставить пользователям возможность эффективно управлять новостями и помочь им быстро и легко публиковать новости с помощью удобного интерфейса.">This website is designed for creating, adding, editing, and managing news articles in the Kazakh state language. Users can enter the news title, description, image, publication date, and actions. When adding or editing news, users can easily build a news database by filling in the necessary information. The main goal of this news website is to provide users with the ability to manage news effectively and help them publish news quickly and easily through a user-friendly interface.</p>
-                               <h3 style="text-align: center; cursor: pointer;"><a class="btn" data-en="Go to project source code" data-ru="Перейти к исходному коду проекта" style="color: white; text-align: center;" href="https://github.com/ghostqaw/news-app"></a></h3>
+                               <h3 style="text-align: center; cursor: pointer;"><a class="btn" data-en="Go to project source code" data-ru="Перейти к исходному коду проекта" target="_blank" style="color: white; text-align: center;" href="https://github.com/ghostqaw/news-app"></a></h3>
                                <video  autoplay controls loop width="98%"><source src="zanalyqtar-google-chrome-2024-06-24-17-12-52_RR99TyW2.mp4"></video>`;
+                    break;
+                    case 'project3':
+                    content = `<h2 style="text-align: center" data-en="Financial Telegram bot" data-ru="Финансовый Telegram-бот">Financial Telegram bot</h2>
+                               <p style="margin: 20px;" data-en="This bot is a financial assistant that allows users to manage and analyze company financial data through interaction with a database. The bot is connected to the database using SQLAlchemy and PostgreSQL, and data can be entered, saved, and visualized as graphs using the pandas library and matplotlib. Users can select existing companies or add new ones by entering financial data such as revenue, expense, profit, and CIT (corporate income tax). The bot provides an interface with buttons to select a company or add a new company, and checks the correctness of the data and password before saving the information. Once a company is selected, the bot displays the company's financial data in graphs, allowing the user to analyze the performance for different months." data-ru="Этот бот является финансовым помощником, который позволяет пользователям управлять и анализировать финансовые данные компаний через взаимодействие с базой данных. Бот подключен к базе данных с использованием SQLAlchemy и PostgreSQL, а данные могут быть введены, сохранены и визуализированы в виде графиков с помощью библиотеки pandas и matplotlib. Пользователи могут выбирать существующие компании или добавлять новые, вводя финансовые данные, такие как доход, расход, прибыль и КПН (корпоративный подоходный налог). Бот предоставляет интерфейс с кнопками для выбора компании или добавления новой компании, а также проверяет корректность данных и пароля перед сохранением информации. После выбора компании бот отображает финансовые данные компании в виде графиков, что позволяет пользователю анализировать показатели за разные месяцы.">This bot is a financial assistant that allows users to manage and analyze company financial data through interaction with a database. The bot is connected to the database using SQLAlchemy and PostgreSQL, and data can be entered, saved, and visualized as graphs using the pandas library and matplotlib. Users can select existing companies or add new ones by entering financial data such as revenue, expense, profit, and CIT (corporate income tax). The bot provides an interface with buttons to select a company or add a new company, and checks the correctness of the data and password before saving the information. Once a company is selected, the bot displays the company's financial data in graphs, allowing the user to analyze the performance for different months.</p>
+                               <h3 style="text-align: center; cursor: pointer;"><a class="btn" data-en="Go to project source code" data-ru="Перейти к исходному коду проекта" style="color: white; text-align: center;" target="_blank" href="https://github.com/ghostqaw/datatest-companies/tree/master"></a><a class="btn" data-en="Open bot in telegram" data-ru="Открыть бота в telegram" target="_blank" style="margin: 0 50px 0 50px; color: white; text-align: center;" href="https://t.me/DataTester_bot"></a></h3>
+                               <video  autoplay controls loop width="98%"><source src="Video_2024_09_28-1.webm"></video>`;
                     break;
                 default:
                     content = `<h2>Unknown Project</h2>`;
@@ -273,10 +283,21 @@
     }, 3000);
 });
 
- function toggleLinks() {
-        const linksSection = document.getElementById('links');
-        linksSection.classList.toggle('open');
+function toggleLinks() {
+    const linksSection = document.getElementById('links');
+    linksSection.classList.toggle('open');
+}
+
+document.addEventListener('click', function(event) {
+    const linksSection = document.getElementById('links');
+    const isClickInside = linksSection.contains(event.target); // Проверка, произошел ли клик внутри панели
+
+    if (!isClickInside && linksSection.classList.contains('open')) {
+        // Если клик вне панели и панель открыта, закрываем её
+        linksSection.classList.remove('open');
     }
+});
+
     </script>
 </body>
 </html>
