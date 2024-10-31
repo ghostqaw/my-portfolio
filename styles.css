@@ -183,43 +183,57 @@ footer {
     background-color: #f9f9f9;
 }
 
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5em;
-    padding: 2em 0;
+.skills-carousel {
+    display: flex;
+    overflow: hidden;
+    padding: 1em 0;
+    justify-content: flex-start;
+        transform: translateX(100%); /* Start from right */
+        transition: transform 0.5s ease-in-out; /* Smooth transition */
 }
 
+
+
 .skill-item {
+    flex: 0 0 auto;
     background: #333;
     color: white;
-    padding: 1.5em;
-    border-radius: 8px;
+    padding: 1em;
+    margin: 0 1em;
+    border-radius: 5px;
     text-align: center;
+    white-space: nowrap;
     transition: transform 0.3s ease-in-out;
 }
 
-.skill-item:nth-child(even) {
-    background: #00FF6C;
-    color: #333;
+.skill-item img {
+    max-width: 200px;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+}
+.skill-item p {
+    text-align: center;
+    margin: 0;
 }
 
 .skill-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.15);
 }
 
-.skill-item img {
-    max-width: 100px;
-    margin-bottom: 0.5em;
-    border-radius: 8px;
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-100px * 7)); }
 }
 
-.skill-item p {
-    margin: 0.5em 0 0;
+.skills-carousel {
+    display: flex;
+    justify-content: space-around;
+    animation: scroll 35s linear infinite;
 }
 
-
-
+.skills-carousel:hover {
+    animation-play-state: paused;
+}
 
 @media (max-width: 768px) {
     #about .content, #education .content {
