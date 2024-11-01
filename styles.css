@@ -63,7 +63,22 @@ section {
 #about .content {
     display: flex;
     align-items: center;
+}
 
+#education {
+    position: relative;
+}
+#education::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #9dd6fc, #8051f8); /* Пример градиентного фона */
+    clip-path: polygon(5% 0%, 100% 70%, 100% 100%, 0% 100%); /* Необычная форма для фона */
+    z-index: -1;
+    opacity: 0.8; /* Легкая прозрачность для фона */
 }
 #about, #links, #education {
     margin-bottom: 0; /* Убираем нижние отступы */
@@ -71,28 +86,62 @@ section {
 }
 #education {
     margin-top: -30px;
+    z-index: 1;
 }
 /* Настройка отступов для контейнеров внутри секций */
 .container {
     margin-bottom: 0; /* Убираем нижние отступы у контейнера */
 }
+.section-title {
+    display: inline-block; /* Для подчеркивания только текста */
+    border-bottom: 5px solid #00FF6C; /* Толщина и цвет подчеркивания */
+    padding-bottom: 2px; /* Отступ между текстом и линией */
+}
+
+#about::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #fd84cd, #fadd8f); /* Пример градиентного фона */
+    clip-path: polygon(0 0, 100% 30%, 90% 100%, 0% 80%); /* Форма фона */
+    z-index: -1;
+}
+
 
 /* Дополнительно для уменьшения верхнего отступа у секции Links */
 #links {
     margin-top: -50px; /* Сдвигаем секцию вверх для уменьшения расстояния */
 }
+.highlight {
+        font-size: 1.3em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #444;
+    }
 
+.highlight-first {
+        font-size: 1.2em;
+        line-height: 1.6;
+        margin-bottom: 15px;
+        color: #ffffff;
+    }
 #about img {
-    border-radius: 50%;
     margin-right: 3em;
-    max-width: 300px;
+    max-width: 500px;
+    border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
 }
 
 #education img {
-    border-radius: 50%;
     margin-right: 3em;
-    max-width: 400px;
-    min-width: 300px;
+    max-width: 500px;
+    border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
 }
 #education .content {
     display: flex;
