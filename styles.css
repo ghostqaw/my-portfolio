@@ -219,7 +219,7 @@ section {
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, #fd84cd, #fadd8f); /* Пример градиентного фона */
-    clip-path: polygon(0 0, 100% 30%, 90% 100%, 0% 90%); /* Форма фона */
+    clip-path: polygon(0 0, 100% 30%, 90% 100%, 0% 85%); /* Форма фона */
     z-index: -1;
 }
 
@@ -363,7 +363,7 @@ footer {
     white-space: nowrap;
     transition: transform 0.5s ease, opacity 0.5s ease;
     position: relative;
-    transform: scale(0); /* Начальное уменьшенное состояние */
+    transform: scale(1); /* Начальное уменьшенное состояние */
     opacity: 0; /* Прозрачность до анимации */
 }
 
@@ -378,8 +378,9 @@ footer {
 }
 
 .skill-item:hover {
-    transform: scale(1.15);
+    transform: scale(1.2); /* Увеличение карточки */
 }
+
 
 /* Активация карточек */
 .skill-item.active {
