@@ -224,22 +224,20 @@ footer {
     cursor: pointer;
 }
 
-
 #skills {
     padding: 4em 0;
     background-color: #f9f9f9;
+    overflow: hidden; /* Чтобы не было видно карточек за пределами секции */
 }
 
 .skills-carousel {
     display: flex;
-    overflow: hidden;
-    padding: 1em 0;
-    justify-content: flex-start;
-        transform: translateX(100%); /* Start from right */
-        transition: transform 0.5s ease-in-out; /* Smooth transition */
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center; /* Центрирование карточек */
+    opacity: 0; /* Скрыть до анимации */
+    transition: opacity 0.5s ease-in-out;
 }
-
-
 
 .skill-item {
     flex: 0 0 auto;
@@ -250,7 +248,10 @@ footer {
     border-radius: 5px;
     text-align: center;
     white-space: nowrap;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    position: relative;
+    transform: scale(0); /* Начальное уменьшенное состояние */
+    opacity: 0; /* Прозрачность до анимации */
 }
 
 .skill-item img {
@@ -267,20 +268,35 @@ footer {
     transform: scale(1.15);
 }
 
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100px * 7)); }
+/* Активация карточек */
+.skill-item.active {
+    transform: scale(1); /* Возвращаем нормальный размер */
+    opacity: 1; /* Делаем видимыми */
 }
 
-.skills-carousel {
-    display: flex;
-    justify-content: space-around;
-    animation: scroll 35s linear infinite;
+/* Позиции для карточек */
+.skill-item.from-left {
+    transform: translateX(-200%);
+}
+.skill-item.from-right {
+    transform: translateX(200%);
+}
+.skill-item.from-top {
+    transform: translateY(-200%);
+}
+.skill-item.from-bottom {
+    transform: translateY(200%);
 }
 
-.skills-carousel:hover {
-    animation-play-state: paused;
+/* При активации они возвращаются в нормальное состояние */
+.skill-item.active.from-left,
+.skill-item.active.from-right,
+.skill-item.active.from-top,
+.skill-item.active.from-bottom {
+    transform: translateX(0) translateY(0) scale(1);
+    opacity: 1;
 }
+
 
 @media (max-width: 768px) {
     #about .content, #education .content {

@@ -13,6 +13,7 @@
                 <button onclick="setLanguage('en')">EN</button>
                 <button onclick="setLanguage('ru')">RU</button>
             </div>
+
             <h1 data-en="Hello, I'm" data-ru="Привет, я">Hello, I'm</h1>
             <p class="highlight-first" data-en="Yesbol Zholdasbay" data-ru="Есбол Жолдасбай">Yesbol Zholdasbay</p>
             <p class="highlight-first" data-en="Full-Stack Developer && Junior DevOps Engineer" data-ru="Фулл-стэк разработчик && Начинающий DevOps инженер">Full-Stack Developer && Junior DevOps Engineer</p>
@@ -156,7 +157,7 @@
                 <p>Chrome DevTools</p>
             </div>
             <div class="skill-item">
-                <img src="https://krify.co/wp-content/uploads/2019/06/ReactJS.jpg" alt="React JS">
+                <img src="https://media.licdn.com/dms/image/D4D12AQF26-NZ279EaA/article-cover_image-shrink_600_2000/0/1688018102545?e=2147483647&v=beta&t=Q9aUSt_UHzSqZYyDycri3s2kqVDlPc-YM0ZzlH2yfYc" alt="React JS">
                 <p>React JS</p>
             </div>
             <div class="skill-item">
@@ -268,35 +269,37 @@
         }
 
 
-    document.addEventListener('DOMContentLoaded', function() {
-    const skillsCarousel = document.querySelector('.skills-carousel');
-    const skillWidth = skillsCarousel.firstElementChild.getBoundingClientRect().width;
-    const numberOfSkills = skillsCarousel.children.length;
+document.addEventListener("DOMContentLoaded", () => {
+    const skillsSection = document.querySelector("#skills");
+    const skillsCarousel = document.querySelector(".skills-carousel");
+    const skillItems = document.querySelectorAll(".skill-item");
 
-    // Устанавливаем ширину карусели в зависимости от количества элементов
-    skillsCarousel.style.width = `${skillWidth * numberOfSkills}px`;
+    const handleScroll = () => {
+        const sectionTop = skillsSection.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
 
-    // Сразу начинаем карусель с первого элемента (позиция 0)
-    let currentIndex = 0;
+        // Если секция видима, активируем анимацию
+        if (sectionTop < screenHeight - 100) {
+            skillsCarousel.style.opacity = "1"; // Показываем контейнер
+            skillItems.forEach((skill, index) => {
+                setTimeout(() => {
+                    skill.classList.add("active");
+                }, index * 200); // С небольшой задержкой
+            });
+            window.removeEventListener("scroll", handleScroll); // Удаляем обработчик
+        }
+    };
 
-    setInterval(() => {
-        // Плавно двигаем карусель к следующему элементу
-        currentIndex = (currentIndex + 1) % numberOfSkills;
-        skillsCarousel.style.transition = 'transform 0.3s ease-in-out';
-        skillsCarousel.style.transform = `translateX(-${currentIndex * skillWidth}px)`;
+    // Назначаем начальные классы для направления
+    skillItems.forEach((skill, index) => {
+        const positions = ["from-left", "from-right", "from-top", "from-bottom"];
+        skill.classList.add(positions[index % positions.length]);
+    });
 
-        // Возвращаем первый элемент в конец для бесконечной карусели
-        setTimeout(() => {
-            if (currentIndex === numberOfSkills - 1) {
-                // Перемещаем первый элемент в конец и сбрасываем смещение
-                skillsCarousel.appendChild(skillsCarousel.firstElementChild);
-                skillsCarousel.style.transition = 'none';
-                skillsCarousel.style.transform = 'translateX(0)';
-                currentIndex = 0;
-            }
-        }, 300);
-    }, 3000);
+    // Слушаем прокрутку
+    window.addEventListener("scroll", handleScroll);
 });
+
 
 function toggleLinks() {
     const linksSection = document.getElementById('links');
