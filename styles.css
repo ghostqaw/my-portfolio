@@ -61,12 +61,17 @@ nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    flex-wrap: wrap; /* Добавляем обертку элементов */
+    gap: 0.5em; /* Добавляем небольшие промежутки между элементами */
 }
 
 /* Стили для элементов списка навигации */
 nav ul li {
     margin: 0 2em;
     position: relative;
+    border-right: 2px solid #ccc;
+    border-right: 2px solid #ccc; /* Добавляем бордер справа */
+    padding: 0 0.5em; /* Меньше отступов */
 }
 
 /* Стили для ссылок в меню */
@@ -75,7 +80,7 @@ nav ul li a {
     text-decoration: none;
     font-size: 1.2em;
     font-weight: bold;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
@@ -102,6 +107,48 @@ nav ul li a.active {
 }
 
 
+
+/* Стили для списка */
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Добавляем обертку элементов */
+    gap: 0.5em; /* Добавляем небольшие промежутки между элементами */
+}
+
+
+/* Убираем бордер у последнего элемента */
+nav ul li:last-child {
+    border-right: none;
+}
+
+
+
+/* Эффект при наведении на ссылку */
+nav ul li a:hover {
+    color: #ff6347;
+    transform: scale(1.1);
+}
+
+/* Плавный скроллинг при переходах */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Изменение фона при прокрутке */
+nav.scrolled {
+    background-color: #222;
+}
+
+/* Анимация для активации ссылок при прокрутке */
+nav ul li a.active {
+    color: #ff6347;
+    transform: scale(1.2);
+}
 
 header .highlight {
     color: #00FF6C;
@@ -172,7 +219,7 @@ section {
     right: 0;
     bottom: 0;
     background: linear-gradient(135deg, #fd84cd, #fadd8f); /* Пример градиентного фона */
-    clip-path: polygon(0 0, 100% 30%, 90% 100%, 0% 80%); /* Форма фона */
+    clip-path: polygon(0 0, 100% 30%, 90% 100%, 0% 90%); /* Форма фона */
     z-index: -1;
 }
 
@@ -629,3 +676,16 @@ nav ul li a.active {
 }
 /* Общие стили для навигации */
 
+@media (max-width: 768px) {
+    /* Снижаем высоту фона для мобильной версии */
+    #education::after {
+        /* Уменьшаем угол и форму градиента для уменьшения высоты */
+        clip-path: polygon(5% 0%, 100% 40%, 100% 100%, 0% 100%); /* Пример с меньшей высотой */
+    }
+}
+@media (max-width: 768px) {
+    /* Увеличиваем угол и форму градиента для мобильной версии */
+    #about::after {
+        clip-path: polygon(0% 0%, 100% 25%, 100% 100%, 0% 100%); /* Увеличиваем высоту градиента для мобильных устройств */
+    }
+}
