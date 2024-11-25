@@ -17,10 +17,13 @@ header {
     cursor: pointer;
     transform: scale(1.05);
 }
+
+/* Стиль для переключателя языков */
 .language-selector {
     position: absolute;
     top: 20px;
     right: 20px;
+    z-index: 2000; /* Убедитесь, что он выше меню */
 }
 
 .language-selector button {
@@ -36,6 +39,69 @@ header {
     background: #00FF6C;
     color: white;
 }
+
+/* Стили для навигации */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000; /* Меню должно быть ниже переключателя */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1em 0;
+    transition: background-color 0.3s ease;
+}
+
+/* Стили для списка навигации */
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Стили для элементов списка навигации */
+nav ul li {
+    margin: 0 2em;
+    position: relative;
+}
+
+/* Стили для ссылок в меню */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Эффект при наведении на ссылки */
+nav ul li a:hover {
+    color: #ff6347;
+    transform: scale(1.1);
+}
+
+/* Плавный скроллинг */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Изменение фона меню при прокрутке */
+nav.scrolled {
+    background-color: #222;
+}
+
+/* Стили для активных ссылок в меню */
+nav ul li a.active {
+    color: #ff6347;
+    transform: scale(1.2);
+}
+
+
 
 header .highlight {
     color: #00FF6C;
@@ -304,75 +370,37 @@ footer {
 
     }
 
-#about img {
-    border-radius: 50%;
-    margin-right: 3em;
-    max-width: 230px;
-}
+    #about img {
+        border-radius: 50%;
+        margin-right: 3em;
+        max-width: 230px;
+    }
 
-#education img {
-    border-radius: 50%;
-    margin-right: 3em;
-    max-width: 250px;
+    #education img {
+        border-radius: 50%;
+        margin-right: 3em;
+        max-width: 250px;
 
-}
+    }
+
     #about .text, #education .text {
         max-width: 100%;
     }
-#skills {
-    padding: 4em 0;
-    background-color: #f9f9f9;
-}
 
-.skills-carousel {
-    display: flex;
-    overflow: hidden;
-    padding: 1em 0;
+    header {
+    background-color: #333;
+    color: white;
+    padding: 6em 0;
+    text-align: center;
     position: relative;
 }
-
-.skill-item {
-    flex: 0 0 auto;
-    background: #333;
-    color: white;
-    padding: 1em;
-    margin: 0 1em;
-    border-radius: 5px;
-    text-align: center;
-    white-space: nowrap;
-    transition: transform 0.3s ease-in-out;
-}
-
-.skill-item img {
-    max-width: 200px;
-    margin-bottom: 0.5em;
-    border-radius: 5px;
-}
-.skill-item p {
-    text-align: center;
-    margin: 0;
-}
-
-.skill-item:hover {
-    transform: scale(1.15);
-}
-
-@keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-100px * 7)); }
-}
-
-.skills-carousel {
-    display: flex;
-    justify-content: space-around;
-    animation: scroll 35s linear infinite;
-}
-
-.skills-carousel:hover {
-    animation-play-state: paused;
+.language-selector {
+    position: absolute;
+    top: 75px;
+    right: 20px;
+    z-index: 2000; /* Убедитесь, что он выше меню */
 }
 }
-
 
 /* Медиа-запрос для экранов шириной менее 768px */
 @media (max-width: 768px) {
@@ -402,7 +430,97 @@ footer {
     #links li {
         margin-bottom: 1em;
     }
+
 }
+@media screen and (max-width: 768px) {
+    .skills-carousel {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1em;
+    }
+
+    .skill-item {
+        margin: 0;
+        max-width: 70%; /* Уменьшаем максимальную ширину карточек */
+        transform: scale(0.9); /* Уменьшаем размер карточек */
+    }
+
+    .skill-item img {
+        max-width: 100%; /* Уменьшаем размер изображений */
+    }
+    nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1000;
+    padding: 0.5em 1em; /* Уменьшаем отступы */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+/* Стили для списка */
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* Добавляем обертку элементов */
+    gap: 0.5em; /* Добавляем небольшие промежутки между элементами */
+}
+
+/* Стили для каждого элемента списка */
+nav ul li {
+    margin: 0; /* Убираем марджины */
+    position: relative;
+    border-right: 1px solid #ccc; /* Добавляем бордер справа */
+    padding: 0 0.5em; /* Меньше отступов */
+}
+
+/* Убираем бордер у последнего элемента */
+nav ul li:last-child {
+    border-right: none;
+}
+
+/* Стили для ссылок */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85em; /* Уменьшаем размер шрифта */
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 0.5em; /* Уменьшаем отступы внутри ссылок */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Эффект при наведении на ссылку */
+nav ul li a:hover {
+    color: #ff6347;
+    transform: scale(1.1);
+}
+
+/* Плавный скроллинг при переходах */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Изменение фона при прокрутке */
+nav.scrolled {
+    background-color: #222;
+}
+
+/* Анимация для активации ссылок при прокрутке */
+nav ul li a.active {
+    color: #ff6347;
+    transform: scale(1.2);
+}
+
+}
+
+
 
 
 
@@ -508,3 +626,5 @@ footer {
     border-radius: 5px;
     margin: 0 0 30px 0;
 }
+/* Общие стили для навигации */
+
