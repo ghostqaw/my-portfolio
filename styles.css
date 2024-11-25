@@ -370,19 +370,6 @@ footer {
 
     }
 
-    #about img {
-        border-radius: 50%;
-        margin-right: 3em;
-        max-width: 230px;
-    }
-
-    #education img {
-        border-radius: 50%;
-        margin-right: 3em;
-        max-width: 250px;
-
-    }
-
     #about .text, #education .text {
         max-width: 100%;
     }
@@ -407,7 +394,7 @@ footer {
     /* Выровнять секции по центру */
     #about, #education, #links {
         padding: 2em 0;
-        text-align: center; /* Центрирование текста */
+        text-align: left; /* Центрирование текста */
     }
     #links {
         right: -95%; /* Скроем почти всю панель, оставив видимым 5% */
@@ -430,7 +417,21 @@ footer {
     #links li {
         margin-bottom: 1em;
     }
+#about img {
+    margin-right: 3em;
+    max-width: 80%;
+    border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+}
 
+#education img {
+    margin-right: 3em;
+    max-width: 90%;
+    border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease;
+}
 }
 @media screen and (max-width: 768px) {
     .skills-carousel {
